@@ -1,5 +1,7 @@
 package com.example.t2009m1_helloworld.controller;
 
+import com.example.t2009m1_helloworld.Model.MySqlUserModel;
+import com.example.t2009m1_helloworld.Model.User;
 import com.example.t2009m1_helloworld.entity.Account;
 import com.example.t2009m1_helloworld.entity.Student;
 
@@ -21,20 +23,16 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
        String username = req.getParameter("username");
-       String fullName = req.getParameter("fullName");
-       String email = req.getParameter("email");
-       String phone = req.getParameter("phone");
-       String birthday = req.getParameter("birthday");
-       String password = req.getParameter("password");
-       String confirmPassword = req.getParameter("confirmPassword");
-       Account account = new Account();
-       account.setUsername(username);
-       account.setFullName(fullName);
-       account.setPassword(password);
-       account.setEmail(email);
-       account.setPhone(phone);
-       account.setBirthday(birthday);
-       req.setAttribute("account", account);
+       String passwordHash = req.getParameter("passwordHash");
+       Integer status = Integer.parseInt(req.getParameter("status"));
+       User user = new User();
+        user.setUsername(username);
+        user.setPasswordHash(passwordHash);
+        user.setStatus(status);
+        MySqlUserModel mySqlUserModel = new MySqlUserModel();
+        boolean result = mySqlUserModel.save(user);
+        System.out.println(result);
+       req.setAttribute("user", user);
        req.getRequestDispatcher("/User/Register-success.jsp").forward(req, resp);
     }
 }

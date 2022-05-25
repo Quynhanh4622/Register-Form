@@ -1,5 +1,6 @@
-<%@ page import="com.example.t2009m1_helloworld.entity.Account" %><%
-   Account account = (Account)request.getAttribute("account");
+
+<%@ page import="com.example.t2009m1_helloworld.Model.User" %><%
+   User user = (User) request.getAttribute("user");
 %>
 <!DOCTYPE html>
 <html>
@@ -12,11 +13,9 @@
     <div class="w3-panel w3-green">
         <h2 class="w3-opacity">Register Success</h2>
     </div>
-    <div>Username: <%= account.getUsername()%></div>
-    <div>Fullname: <%= account.getFullName()%></div>
-    <div>Email: <%= account.getEmail()%></div>
-    <div>Phone: <%= account.getPhone()%></div>
-    <div>Birthday: <%= account.getBirthday()%></div>
+    <div>Username: <%= user.getUsername()%></div>
+    <div>PasswordHash: <%= user.getPasswordHash()%></div>
+    <div>Status: <%= user.getStatus()%></div>
 </div>
 </body>
 </html>
