@@ -1,4 +1,4 @@
-package com.example.t2009m1_helloworld.base;
+package com.example.t2009m1_helloworld.entity.base;
 
 import com.example.t2009m1_helloworld.entity.ProductStatus;
 
