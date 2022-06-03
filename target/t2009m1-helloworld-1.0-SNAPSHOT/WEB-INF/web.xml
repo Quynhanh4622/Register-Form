@@ -4,38 +4,38 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>CreateProductServlet</servlet-name>
-        <servlet-class>com.example.t2009m1_helloworld.controller.CreateProductServlet</servlet-class>
+        <servlet-name>CreateCategoryServlet</servlet-name>
+        <jsp-file>/Admin/views/category/from.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CreateProductServlet</servlet-name>
-        <url-pattern>/create</url-pattern>
+        <servlet-name>CreateCategoryServlet</servlet-name>
+        <url-pattern>/from</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>DeleteProductServlet</servlet-name>
-        <servlet-class>com.example.t2009m1_helloworld.controller.DeleteProductServlet</servlet-class>
+        <servlet-name>DeleteCategoryServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.DeleteCategoryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-    <servlet-name>DeleteProductServlet</servlet-name>
+    <servlet-name>DeleteCategoryServlet</servlet-name>
     <url-pattern>/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>UpdateProductServlet</servlet-name>
-        <servlet-class>com.example.t2009m1_helloworld.controller.UpdateProductServlet</servlet-class>
+        <servlet-name>UpdateCategoryServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.UpdateCategoryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>UpdateProductServlet</servlet-name>
+        <servlet-name>UpdateCategoryServlet</servlet-name>
         <url-pattern>/update</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ListProductServlet</servlet-name>
-        <servlet-class>com.example.t2009m1_helloworld.controller.ListProductServlet</servlet-class>
+        <servlet-name>ListCategoryServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.ListCategoryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ListProductServlet</servlet-name>
+        <servlet-name>ListCategoryServlet</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
 
