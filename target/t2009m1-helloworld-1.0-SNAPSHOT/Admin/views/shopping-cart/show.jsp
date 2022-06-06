@@ -1,253 +1,152 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: acer
-  Date: 6/6/2022
-  Time: 3:01 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.HashMap"%>
+<%@ page import="com.example.t2009m1_helloworld.entity.Product" %>
+<%@ page import="com.example.t2009m1_helloworld.entity.Product" %>
+<!DOCTYPE html>
+<html lang="en">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
+<jsp:include page="/template/components/header.jsp" />
+<jsp:include page="/template/components/navbar.jsp" />
 <body>
-<section class="h-100 h-custom" style="background-color: #eee;">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body p-4">
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
+        </div>
+    </div>
+</div>
 
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <form class="col-md-12" method="post">
+                <div class="site-blocks-table">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="product-thumbnail">Image</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-total">Total</th>
+                            <th class="product-remove">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="product-thumbnail">
+                                <img src="images/cloth_1.jpg" alt="Image" class="img-fluid">
+                            </td>
+                            <td class="product-name">
+                                <h2 class="h5 text-black">Top Up T-Shirt</h2>
+                            </td>
+                            <td>$49.00</td>
+                            <td>
+                                <div class="input-group mb-3" style="max-width: 120px;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                    </div>
+                                    <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td>$49.00</td>
+                            <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
+                        </tr>
+
+                        <tr>
+                            <td class="product-thumbnail">
+                                <img src="images/cloth_2.jpg" alt="Image" class="img-fluid">
+                            </td>
+                            <td class="product-name">
+                                <h2 class="h5 text-black">Polo Shirt</h2>
+                            </td>
+                            <td>$49.00</td>
+                            <td>
+                                <div class="input-group mb-3" style="max-width: 120px;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                    </div>
+                                    <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td>$49.00</td>
+                            <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mb-5">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="text-black h4" for="coupon">Coupon</label>
+                        <p>Enter your coupon code if you have one.</p>
+                    </div>
+                    <div class="col-md-8 mb-3 mb-md-0">
+                        <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary btn-sm">Apply Coupon</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pl-5">
+                <div class="row justify-content-end">
+                    <div class="col-md-7">
                         <div class="row">
-
-                            <div class="col-lg-7">
-                                <h5 class="mb-3"><a href="#!" class="text-body"><i
-                                        class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
-                                <hr>
-
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <div>
-                                        <p class="mb-1">Shopping cart</p>
-                                        <p class="mb-0">You have 4 items in your cart</p>
-                                    </div>
-                                    <div>
-                                        <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!"
-                                                                                                    class="text-body">price
-                                            <i class="fas fa-angle-down mt-1"></i></a></p>
-                                    </div>
-                                </div>
-
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div>
-                                                    <img
-                                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                                            class="img-fluid rounded-3" alt="Shopping item"
-                                                            style="width: 65px;">
-                                                </div>
-                                                <div class="ms-3">
-                                                    <h5>Iphone 11 pro</h5>
-                                                    <p class="small mb-0">256GB, Navy Blue</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div style="width: 50px;">
-                                                    <h5 class="fw-normal mb-0">2</h5>
-                                                </div>
-                                                <div style="width: 80px;">
-                                                    <h5 class="mb-0">$900</h5>
-                                                </div>
-                                                <a href="#!" style="color: #cecece;"><i
-                                                        class="fas fa-trash-alt"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div>
-                                                    <img
-                                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img2.webp"
-                                                            class="img-fluid rounded-3" alt="Shopping item"
-                                                            style="width: 65px;">
-                                                </div>
-                                                <div class="ms-3">
-                                                    <h5>Samsung galaxy Note 10 </h5>
-                                                    <p class="small mb-0">256GB, Navy Blue</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div style="width: 50px;">
-                                                    <h5 class="fw-normal mb-0">2</h5>
-                                                </div>
-                                                <div style="width: 80px;">
-                                                    <h5 class="mb-0">$900</h5>
-                                                </div>
-                                                <a href="#!" style="color: #cecece;"><i
-                                                        class="fas fa-trash-alt"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div>
-                                                    <img
-                                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img3.webp"
-                                                            class="img-fluid rounded-3" alt="Shopping item"
-                                                            style="width: 65px;">
-                                                </div>
-                                                <div class="ms-3">
-                                                    <h5>Canon EOS M50</h5>
-                                                    <p class="small mb-0">Onyx Black</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div style="width: 50px;">
-                                                    <h5 class="fw-normal mb-0">1</h5>
-                                                </div>
-                                                <div style="width: 80px;">
-                                                    <h5 class="mb-0">$1199</h5>
-                                                </div>
-                                                <a href="#!" style="color: #cecece;"><i
-                                                        class="fas fa-trash-alt"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card mb-3 mb-lg-0">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div>
-                                                    <img
-                                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
-                                                            class="img-fluid rounded-3" alt="Shopping item"
-                                                            style="width: 65px;">
-                                                </div>
-                                                <div class="ms-3">
-                                                    <h5>MacBook Pro</h5>
-                                                    <p class="small mb-0">1TB, Graphite</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div style="width: 50px;">
-                                                    <h5 class="fw-normal mb-0">1</h5>
-                                                </div>
-                                                <div style="width: 80px;">
-                                                    <h5 class="mb-0">$1799</h5>
-                                                </div>
-                                                <a href="#!" style="color: #cecece;"><i
-                                                        class="fas fa-trash-alt"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                            <div class="col-md-12 text-right border-bottom mb-5">
+                                <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
                             </div>
-                            <div class="col-lg-5">
-
-                                <div class="card bg-primary text-white rounded-3">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center mb-4">
-                                            <h5 class="mb-0">Card details</h5>
-                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
-                                                 class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
-                                        </div>
-
-                                        <p class="small mb-2">Card type</p>
-                                        <a href="#!" type="submit" class="text-white"><i
-                                                class="fab fa-cc-mastercard fa-2x me-2"></i></a>
-                                        <a href="#!" type="submit" class="text-white"><i
-                                                class="fab fa-cc-visa fa-2x me-2"></i></a>
-                                        <a href="#!" type="submit" class="text-white"><i
-                                                class="fab fa-cc-amex fa-2x me-2"></i></a>
-                                        <a href="#!" type="submit" class="text-white"><i
-                                                class="fab fa-cc-paypal fa-2x"></i></a>
-
-                                        <form class="mt-4">
-                                            <div class="form-outline form-white mb-4">
-                                                <input type="text" id="typeName" class="form-control form-control-lg"
-                                                       siez="17"
-                                                       placeholder="Cardholder's Name"/>
-                                                <label class="form-label" for="typeName">Cardholder's Name</label>
-                                            </div>
-
-                                            <div class="form-outline form-white mb-4">
-                                                <input type="text" id="typeText" class="form-control form-control-lg"
-                                                       siez="17"
-                                                       placeholder="1234 5678 9012 3457" minlength="19" maxlength="19"/>
-                                                <label class="form-label" for="typeText">Card Number</label>
-                                            </div>
-
-                                            <div class="row mb-4">
-                                                <div class="col-md-6">
-                                                    <div class="form-outline form-white">
-                                                        <input type="text" id="typeExp"
-                                                               class="form-control form-control-lg"
-                                                               placeholder="MM/YYYY" size="7" id="exp" minlength="7"
-                                                               maxlength="7"/>
-                                                        <label class="form-label" for="typeExp">Expiration</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-outline form-white">
-                                                        <input type="password" id="typeText"
-                                                               class="form-control form-control-lg"
-                                                               placeholder="&#9679;&#9679;&#9679;" size="1"
-                                                               minlength="3" maxlength="3"/>
-                                                        <label class="form-label" for="typeText">Cvv</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </form>
-
-                                        <hr class="my-4">
-
-                                        <div class="d-flex justify-content-between">
-                                            <p class="mb-2">Subtotal</p>
-                                            <p class="mb-2">$4798.00</p>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between">
-                                            <p class="mb-2">Shipping</p>
-                                            <p class="mb-2">$20.00</p>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between mb-4">
-                                            <p class="mb-2">Total(Incl. taxes)</p>
-                                            <p class="mb-2">$4818.00</p>
-                                        </div>
-
-                                        <button type="button" class="btn btn-info btn-block btn-lg">
-                                            <div class="d-flex justify-content-between">
-                                                <span>$4818.00</span>
-                                                <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                                            </div>
-                                        </button>
-
-                                    </div>
-                                </div>
-
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-black">Subtotal</span>
                             </div>
-
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$230.00</strong>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6">
+                                <span class="text-black">Total</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">$230.00</strong>
+                            </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+<jsp:include page="/template/components/footer.jsp" />
+<jsp:include page="/template/components/scrip.jsp" />
+
+
 </body>
 </html>
