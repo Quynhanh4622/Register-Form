@@ -19,7 +19,7 @@ public class CreateCategoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/admin/category/from.jsp").forward(req,resp);
+        req.getRequestDispatcher("/admin/category/form.jsp").forward(req,resp);
     }
 
     @Override

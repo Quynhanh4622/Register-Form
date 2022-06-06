@@ -5,11 +5,11 @@
          version="4.0">
     <servlet>
         <servlet-name>CreateCategoryServlet</servlet-name>
-        <jsp-file>/Admin/views/category/from.jsp</jsp-file>
+        <jsp-file>/Admin/views/category/form.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateCategoryServlet</servlet-name>
-        <url-pattern>/from</url-pattern>
+        <url-pattern>/form</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -48,5 +48,37 @@
         <url-pattern>/Admin</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddCartServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.AddCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCartServlet</servlet-name>
+        <url-pattern>add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SubCartServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.SubCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubCartServlet</servlet-name>
+        <url-pattern>sub</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GetCartServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.GetCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCartServlet</servlet-name>
+        <url-pattern>get</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RemoveCartServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.RemoveCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RemoveCartServlet</servlet-name>
+        <url-pattern>remove</url-pattern>
+    </servlet-mapping>
 
 </web-app>

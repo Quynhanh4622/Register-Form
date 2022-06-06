@@ -25,7 +25,7 @@ public class UpdateCategoryServlet extends HttpServlet {
             category = new Category();
         }
         req.setAttribute("product", category);
-        req.getRequestDispatcher("admin/category/update.jsp").forward(req, resp);
+        req.getRequestDispatcher("Admin/category/form.jsp").forward(req, resp);
     }
 
     @Override
