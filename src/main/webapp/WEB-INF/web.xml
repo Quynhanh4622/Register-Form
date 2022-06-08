@@ -12,6 +12,7 @@
         <url-pattern>/form</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>DeleteCategoryServlet</servlet-name>
         <servlet-class>com.example.t2009m1_helloworld.controller.DeleteCategoryServlet</servlet-class>
@@ -80,5 +81,23 @@
         <servlet-name>RemoveCartServlet</servlet-name>
         <url-pattern>/cart/remove</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.example.t2009m1_helloworld.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    //khai bao filter
+   <filter>
+       <filter-name>AdminFilter</filter-name>
+       <filter-class>com.example.t2009m1_helloworld.filterdemo.AdminFilter</filter-class>
+   </filter>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

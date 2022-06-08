@@ -146,7 +146,5 @@
 </div>
 <jsp:include page="/template/components/footer.jsp" />
 <jsp:include page="/template/components/scrip.jsp" />
-
-
 </body>
 </html>
